@@ -9,6 +9,11 @@ import com.leafclient.struct.maths.MathOperationsHelper;
 public final class UnsupportedNumberType extends RuntimeException {
 
     /**
+     * A formatted String to display the supported types in case of an error.
+     */
+    public static String SUPPORTED_NUMBERS_STRING;
+
+    /**
      * Returns a new instance of {@link UnsupportedNumberType} ready to be thrown, oh yeah.
      *
      * @param numberType Number type's class.
@@ -16,11 +21,6 @@ public final class UnsupportedNumberType extends RuntimeException {
     public static UnsupportedNumberType of(Class<? extends Number> numberType) {
         return new UnsupportedNumberType(numberType);
     }
-
-    /**
-     * A formatted String to display the supported types in case of an error.
-     */
-    public static String SUPPORTED_NUMBERS_STRING;
 
     static {
         final StringBuilder builder = new StringBuilder();
