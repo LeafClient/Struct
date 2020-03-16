@@ -96,7 +96,6 @@ public final class Vector2<T extends Number> {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vector2<?> vector2 = (Vector2<?>) o;
         return Objects.equals(x, vector2.x) &&
