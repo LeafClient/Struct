@@ -5,12 +5,12 @@ import com.leafclient.struct.maths.exception.UnsupportedNumberType;
 import static java.util.Objects.*;
 
 /**
- * {@link GenericMathOperation} is an utility class allowing you to operate on generic numbers
+ * {@link MathOperations} is an utility class allowing you to operate on generic numbers
  * even if the type is contained in a generic type.
  * It should be used only in necessary cases because of the performance cost.
  */
 @SuppressWarnings("unchecked")
-public final class GenericMathOperation {
+public final class MathOperations {
 
     /**
      * Each {@link Number} implementation supported by the math library are provided here.
@@ -197,9 +197,8 @@ public final class GenericMathOperation {
      * @return The result of the subtraction between the first and the second number
      */
     public static <T extends Number> T round(T n1, T n2) {
-        if(n1 == null || n2 == null) {
-            throw new NullPointerException("A number is null!");
-        }
+        requireNonNull(n1);
+        requireNonNull(n2);
 
         if(n1.getClass() == Byte.TYPE || n1.getClass() == Byte.class) {
             return (T) new Byte(
