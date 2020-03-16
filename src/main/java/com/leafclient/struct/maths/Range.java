@@ -9,28 +9,8 @@ import java.util.Objects;
  */
 public final class Range<T extends Number> {
 
-    /**
-     * Creates a {@link Range} between the two specified numbers.
-     *
-     * @param n1 First number
-     * @param n2 Second number
-     * @param <T> Number type
-     */
-    public static <T extends Number> Range<T> of(T n1, T n2) {
-        // The minimum is before
-        if(n1.doubleValue() < n2.doubleValue())  {
-            return new Range<>(
-                    n1,
-                    n2
-            );
-        }
-        return new Range<>(
-                n2,
-                n1
-        );
-    }
-
-    private final T minimum, maximum;
+    private final T minimum;
+    private final T maximum;
 
     /**
      * Creates a range between the two specified numbers.
@@ -93,6 +73,27 @@ public final class Range<T extends Number> {
     @Override
     public int hashCode() {
         return Objects.hash(minimum, maximum);
+    }
+
+    /**
+     * Creates a {@link Range} between the two specified numbers.
+     *
+     * @param n1 First number
+     * @param n2 Second number
+     * @param <T> Number type
+     */
+    public static <T extends Number> Range<T> of(T n1, T n2) {
+        // The minimum is before
+        if(n1.doubleValue() < n2.doubleValue())  {
+            return new Range<>(
+                    n1,
+                    n2
+            );
+        }
+        return new Range<>(
+                n2,
+                n1
+        );
     }
 
 }

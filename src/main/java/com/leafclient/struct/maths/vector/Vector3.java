@@ -2,9 +2,9 @@ package com.leafclient.struct.maths.vector;
 
 import java.util.Objects;
 
-import static com.leafclient.struct.maths.MathOperations.add;
-import static com.leafclient.struct.maths.MathOperations.subtract;
-import static com.leafclient.struct.maths.MathOperations.multiplication;
+import static com.leafclient.struct.maths.MathOperationsHelper.add;
+import static com.leafclient.struct.maths.MathOperationsHelper.subtract;
+import static com.leafclient.struct.maths.MathOperationsHelper.multiplication;
 
 /**
  * A simple class utility that contains information about a {@link Vector3} based on 3 axises.
@@ -13,7 +13,9 @@ import static com.leafclient.struct.maths.MathOperations.multiplication;
  */
 public final class Vector3<T extends Number> {
 
-    private final T x, y, z;
+    private final T x;
+    private final T y;
+    private final T z;
 
     /**
      * Creates a new {@link Vector3} with specified values.

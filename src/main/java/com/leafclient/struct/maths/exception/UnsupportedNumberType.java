@@ -1,9 +1,9 @@
 package com.leafclient.struct.maths.exception;
 
-import com.leafclient.struct.maths.MathOperations;
+import com.leafclient.struct.maths.MathOperationsHelper;
 
 /**
- * {@link MathOperations} operations are really unsafe and do not support any type of {@link Number} implementations.
+ * {@link MathOperationsHelper} operations are really unsafe and do not support any type of {@link Number} implementations.
  * This exception is thrown if an operation is unsupported.
  */
 public final class UnsupportedNumberType extends RuntimeException {
@@ -24,7 +24,7 @@ public final class UnsupportedNumberType extends RuntimeException {
 
     static {
         final StringBuilder builder = new StringBuilder();
-        for(Class<? extends Number> numberType: MathOperations.SUPPORTED_NUMBERS) {
+        for(Class<? extends Number> numberType: MathOperationsHelper.SUPPORTED_NUMBERS) {
             builder.append(numberType.getSimpleName());
         }
 

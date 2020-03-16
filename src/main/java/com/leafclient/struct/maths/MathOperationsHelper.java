@@ -5,12 +5,12 @@ import com.leafclient.struct.maths.exception.UnsupportedNumberType;
 import static java.util.Objects.*;
 
 /**
- * {@link MathOperations} is an utility class allowing you to operate on generic numbers
+ * {@link MathOperationsHelper} is an utility class allowing you to operate on generic numbers
  * even if the type is contained in a generic type.
  * It should be used only in necessary cases because of the performance cost.
  */
 @SuppressWarnings("unchecked")
-public final class MathOperations {
+public final class MathOperationsHelper {
 
     /**
      * Each {@link Number} implementation supported by the math library are provided here.
