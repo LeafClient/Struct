@@ -1,5 +1,7 @@
 package com.leafclient.struct.maths;
 
+import java.util.Objects;
+
 /**
  * Range is a powerful utility class used to represent a mathematical set.
  *
@@ -72,6 +74,25 @@ public final class Range<T extends Number> {
             return minimum;
 
         return value;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Range<?> range = (Range<?>) o;
+        return Objects.equals(minimum, range.minimum) &&
+                Objects.equals(maximum, range.maximum);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(minimum, maximum);
     }
 
 }
