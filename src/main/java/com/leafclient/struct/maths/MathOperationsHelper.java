@@ -33,9 +33,8 @@ public final class MathOperationsHelper {
      * @return The result of the addition between the first and the second number
      */
     public static <T extends Number> T add(T n1, T n2) {
-        if(n1 == null || n2 == null) {
-            throw new NullPointerException("A number is null!");
-        }
+        requireNonNull(n1);
+        requireNonNull(n2);
 
         if(n1.getClass() == Byte.TYPE || n1.getClass() == Byte.class) {
             return (T) new Byte((byte)(n1.byteValue() + n2.byteValue()));
@@ -64,9 +63,8 @@ public final class MathOperationsHelper {
      * @return The result of the subtraction between the first and the second number
      */
     public static <T extends Number> T subtract(T n1, T n2) {
-        if(n1 == null || n2 == null) {
-            throw new NullPointerException("A number is null!");
-        }
+        requireNonNull(n1);
+        requireNonNull(n2);
 
         if(n1.getClass() == Byte.TYPE || n1.getClass() == Byte.class) {
             return (T) new Byte((byte)(n1.byteValue() - n2.byteValue()));
